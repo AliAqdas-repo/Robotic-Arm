@@ -1,0 +1,503 @@
+
+TXmicrocontroller.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000008  00800100  000002b2  00000346  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002b2  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000000a  00800108  00800108  0000034e  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000034e  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000380  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000058  00000000  00000000  000003c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000081c  00000000  00000000  00000418  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000702  00000000  00000000  00000c34  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000026e  00000000  00000000  00001336  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000118  00000000  00000000  000015a4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000432  00000000  00000000  000016bc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000248  00000000  00000000  00001aee  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000048  00000000  00000000  00001d36  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3c 00 	jmp	0x78	; 0x78 <__ctors_end>
+   4:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+   8:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+   c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  10:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  14:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  18:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  1c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  20:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  24:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  28:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  2c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  30:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  34:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  38:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  3c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  40:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  44:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  48:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  4c:	0c 94 91 00 	jmp	0x122	; 0x122 <__vector_19>
+  50:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  54:	0c 94 ef 00 	jmp	0x1de	; 0x1de <__vector_21>
+  58:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  5c:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  60:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  64:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__bad_interrupt>
+  68:	0d 01       	movw	r0, r26
+  6a:	12 01       	movw	r2, r4
+  6c:	17 01       	movw	r2, r14
+  6e:	1c 01       	movw	r2, r24
+  70:	21 01       	movw	r4, r2
+  72:	26 01       	movw	r4, r12
+  74:	2b 01       	movw	r4, r22
+  76:	30 01       	movw	r6, r0
+
+00000078 <__ctors_end>:
+  78:	11 24       	eor	r1, r1
+  7a:	1f be       	out	0x3f, r1	; 63
+  7c:	cf ef       	ldi	r28, 0xFF	; 255
+  7e:	d8 e0       	ldi	r29, 0x08	; 8
+  80:	de bf       	out	0x3e, r29	; 62
+  82:	cd bf       	out	0x3d, r28	; 61
+
+00000084 <__do_copy_data>:
+  84:	11 e0       	ldi	r17, 0x01	; 1
+  86:	a0 e0       	ldi	r26, 0x00	; 0
+  88:	b1 e0       	ldi	r27, 0x01	; 1
+  8a:	e2 eb       	ldi	r30, 0xB2	; 178
+  8c:	f2 e0       	ldi	r31, 0x02	; 2
+  8e:	02 c0       	rjmp	.+4      	; 0x94 <__do_copy_data+0x10>
+  90:	05 90       	lpm	r0, Z+
+  92:	0d 92       	st	X+, r0
+  94:	a8 30       	cpi	r26, 0x08	; 8
+  96:	b1 07       	cpc	r27, r17
+  98:	d9 f7       	brne	.-10     	; 0x90 <__do_copy_data+0xc>
+
+0000009a <__do_clear_bss>:
+  9a:	21 e0       	ldi	r18, 0x01	; 1
+  9c:	a8 e0       	ldi	r26, 0x08	; 8
+  9e:	b1 e0       	ldi	r27, 0x01	; 1
+  a0:	01 c0       	rjmp	.+2      	; 0xa4 <.do_clear_bss_start>
+
+000000a2 <.do_clear_bss_loop>:
+  a2:	1d 92       	st	X+, r1
+
+000000a4 <.do_clear_bss_start>:
+  a4:	a2 31       	cpi	r26, 0x12	; 18
+  a6:	b2 07       	cpc	r27, r18
+  a8:	e1 f7       	brne	.-8      	; 0xa2 <.do_clear_bss_loop>
+  aa:	0e 94 e7 00 	call	0x1ce	; 0x1ce <main>
+  ae:	0c 94 57 01 	jmp	0x2ae	; 0x2ae <_exit>
+
+000000b2 <__bad_interrupt>:
+  b2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000b6 <checkeq>:
+	}
+	
+}
+
+void checkeq(void)
+{
+  b6:	cf 93       	push	r28
+  b8:	df 93       	push	r29
+	//checking if array is same at the beginning of array transmit
+	if (idC==0)
+  ba:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <__data_end>
+  be:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <__data_end+0x1>
+  c2:	89 2b       	or	r24, r25
+  c4:	f9 f4       	brne	.+62     	; 0x104 <checkeq+0x4e>
+	{
+		//comparing current and previous dutyCycles
+		for(int ti=0;ti<JYCT;ti++)
+		{
+			if(PdutyCycle[ti]!=CdutyCycle[ti])
+  c6:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+  ca:	80 91 0a 01 	lds	r24, 0x010A	; 0x80010a <CdutyCycle>
+  ce:	98 17       	cp	r25, r24
+  d0:	71 f0       	breq	.+28     	; 0xee <checkeq+0x38>
+  d2:	04 c0       	rjmp	.+8      	; 0xdc <checkeq+0x26>
+  d4:	91 91       	ld	r25, Z+
+  d6:	8d 91       	ld	r24, X+
+  d8:	98 17       	cp	r25, r24
+  da:	21 f0       	breq	.+8      	; 0xe4 <checkeq+0x2e>
+			{
+				//eqflag=0;
+				UCSR0B=(1<<TXEN0)|(1<<UDRIE0);
+  dc:	88 e2       	ldi	r24, 0x28	; 40
+  de:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+				break;
+  e2:	10 c0       	rjmp	.+32     	; 0x104 <checkeq+0x4e>
+			}
+			else
+			{
+				UCSR0B=0;
+  e4:	18 82       	st	Y, r1
+{
+	//checking if array is same at the beginning of array transmit
+	if (idC==0)
+	{
+		//comparing current and previous dutyCycles
+		for(int ti=0;ti<JYCT;ti++)
+  e6:	e2 17       	cp	r30, r18
+  e8:	f3 07       	cpc	r31, r19
+  ea:	a1 f7       	brne	.-24     	; 0xd4 <checkeq+0x1e>
+  ec:	0b c0       	rjmp	.+22     	; 0x104 <checkeq+0x4e>
+				UCSR0B=(1<<TXEN0)|(1<<UDRIE0);
+				break;
+			}
+			else
+			{
+				UCSR0B=0;
+  ee:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+  f2:	e1 e0       	ldi	r30, 0x01	; 1
+  f4:	f1 e0       	ldi	r31, 0x01	; 1
+  f6:	ab e0       	ldi	r26, 0x0B	; 11
+  f8:	b1 e0       	ldi	r27, 0x01	; 1
+  fa:	28 e0       	ldi	r18, 0x08	; 8
+  fc:	31 e0       	ldi	r19, 0x01	; 1
+  fe:	c1 ec       	ldi	r28, 0xC1	; 193
+ 100:	d0 e0       	ldi	r29, 0x00	; 0
+ 102:	e8 cf       	rjmp	.-48     	; 0xd4 <checkeq+0x1e>
+			}
+		}
+	}
+}
+ 104:	df 91       	pop	r29
+ 106:	cf 91       	pop	r28
+ 108:	08 95       	ret
+
+0000010a <setupTX>:
+
+//Setting Up Transmitter
+void setupTX()
+{
+	//Baud Rate Register Setup
+	UBRR0H =(BRC >> 8);
+ 10a:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+	UBRR0L= BRC;
+ 10e:	80 e1       	ldi	r24, 0x10	; 16
+ 110:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+	//Enabling Transmitter and Interrupt for Empty Transmit Buffer
+	UCSR0B=(1<<TXEN0)|(1<<UDRIE0);
+ 114:	88 e2       	ldi	r24, 0x28	; 40
+ 116:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+	//Configuring Asynchronus USART with 8 bit data and a single parity bit
+	UCSR0C=(1<<UCSZ01) |(1<<UCSZ00)|(1<<UPM01);
+ 11a:	86 e2       	ldi	r24, 0x26	; 38
+ 11c:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+ 120:	08 95       	ret
+
+00000122 <__vector_19>:
+}
+//Interrupt in case of empty transmit buffer
+ISR(USART_UDRE_vect)
+{
+ 122:	1f 92       	push	r1
+ 124:	0f 92       	push	r0
+ 126:	0f b6       	in	r0, 0x3f	; 63
+ 128:	0f 92       	push	r0
+ 12a:	11 24       	eor	r1, r1
+ 12c:	2f 93       	push	r18
+ 12e:	8f 93       	push	r24
+ 130:	9f 93       	push	r25
+ 132:	af 93       	push	r26
+ 134:	bf 93       	push	r27
+ 136:	ef 93       	push	r30
+ 138:	ff 93       	push	r31
+	
+	UDR0=CdutyCycle[idC];
+ 13a:	e0 91 08 01 	lds	r30, 0x0108	; 0x800108 <__data_end>
+ 13e:	f0 91 09 01 	lds	r31, 0x0109	; 0x800109 <__data_end+0x1>
+ 142:	e6 5f       	subi	r30, 0xF6	; 246
+ 144:	fe 4f       	sbci	r31, 0xFE	; 254
+ 146:	80 81       	ld	r24, Z
+ 148:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+	PdutyCycle[idC]=CdutyCycle[idC];
+ 14c:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <__data_end>
+ 150:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <__data_end+0x1>
+ 154:	fc 01       	movw	r30, r24
+ 156:	e0 50       	subi	r30, 0x00	; 0
+ 158:	ff 4f       	sbci	r31, 0xFF	; 255
+ 15a:	dc 01       	movw	r26, r24
+ 15c:	a6 5f       	subi	r26, 0xF6	; 246
+ 15e:	be 4f       	sbci	r27, 0xFE	; 254
+ 160:	2c 91       	ld	r18, X
+ 162:	20 83       	st	Z, r18
+	
+	if (idC==(JYCT-1))
+ 164:	87 30       	cpi	r24, 0x07	; 7
+ 166:	91 05       	cpc	r25, r1
+ 168:	29 f4       	brne	.+10     	; 0x174 <__vector_19+0x52>
+	{
+		idC=0;
+ 16a:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <__data_end+0x1>
+ 16e:	10 92 08 01 	sts	0x0108, r1	; 0x800108 <__data_end>
+ 172:	05 c0       	rjmp	.+10     	; 0x17e <__vector_19+0x5c>
+		
+	}
+	else
+	{
+		idC++;
+ 174:	01 96       	adiw	r24, 0x01	; 1
+ 176:	90 93 09 01 	sts	0x0109, r25	; 0x800109 <__data_end+0x1>
+ 17a:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <__data_end>
+	}
+}
+ 17e:	ff 91       	pop	r31
+ 180:	ef 91       	pop	r30
+ 182:	bf 91       	pop	r27
+ 184:	af 91       	pop	r26
+ 186:	9f 91       	pop	r25
+ 188:	8f 91       	pop	r24
+ 18a:	2f 91       	pop	r18
+ 18c:	0f 90       	pop	r0
+ 18e:	0f be       	out	0x3f, r0	; 63
+ 190:	0f 90       	pop	r0
+ 192:	1f 90       	pop	r1
+ 194:	18 95       	reti
+
+00000196 <selectADC>:
+
+//select ADC Port
+void selectADC(uint8_t ADC_pt)
+{
+	//Modifying first four bits of ADMUX to select ADC Port
+	ADMUX=(ADMUX & 0xE0) | (ADC_pt & (0x1F));
+ 196:	ec e7       	ldi	r30, 0x7C	; 124
+ 198:	f0 e0       	ldi	r31, 0x00	; 0
+ 19a:	90 81       	ld	r25, Z
+ 19c:	90 7e       	andi	r25, 0xE0	; 224
+ 19e:	8f 71       	andi	r24, 0x1F	; 31
+ 1a0:	89 2b       	or	r24, r25
+ 1a2:	80 83       	st	Z, r24
+ 1a4:	08 95       	ret
+
+000001a6 <startADC>:
+}
+//Start ADC Converstion
+void startADC()
+{
+	ADCSRA|=(1<<ADSC);
+ 1a6:	ea e7       	ldi	r30, 0x7A	; 122
+ 1a8:	f0 e0       	ldi	r31, 0x00	; 0
+ 1aa:	80 81       	ld	r24, Z
+ 1ac:	80 64       	ori	r24, 0x40	; 64
+ 1ae:	80 83       	st	Z, r24
+ 1b0:	08 95       	ret
+
+000001b2 <setupADC>:
+}
+//Setup ADC
+void setupADC()
+{
+	//Selecting Reference Voltage Port and Left Adjustment Result
+	ADMUX|=(1<<REFS0)|(1<<ADLAR);
+ 1b2:	ec e7       	ldi	r30, 0x7C	; 124
+ 1b4:	f0 e0       	ldi	r31, 0x00	; 0
+ 1b6:	80 81       	ld	r24, Z
+ 1b8:	80 66       	ori	r24, 0x60	; 96
+ 1ba:	80 83       	st	Z, r24
+	//Enabling ADC, Prescaling by 128, Enabling ADC Interrupt
+	ADCSRA=(1<<ADEN)|(1<<ADIE)|(1<<ADPS0)|(1<<ADPS1)|(1<<ADPS2);
+ 1bc:	8f e8       	ldi	r24, 0x8F	; 143
+ 1be:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+	//Disabling Digital Input
+	DIDR0=0x3F;
+ 1c2:	8f e3       	ldi	r24, 0x3F	; 63
+ 1c4:	80 93 7e 00 	sts	0x007E, r24	; 0x80007e <__TEXT_REGION_LENGTH__+0x7f807e>
+	startADC();
+ 1c8:	0e 94 d3 00 	call	0x1a6	; 0x1a6 <startADC>
+ 1cc:	08 95       	ret
+
+000001ce <main>:
+uint8_t eqflag=1;
+int counter=0;
+int main(void)
+{
+	//setting up ADC and USART Transmitter
+	setupTX();
+ 1ce:	0e 94 85 00 	call	0x10a	; 0x10a <setupTX>
+	setupADC();
+ 1d2:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <setupADC>
+	//Enabling Global Interrupts
+	sei();
+ 1d6:	78 94       	sei
+	
+	while(1)
+	{
+		checkeq();
+ 1d8:	0e 94 5b 00 	call	0xb6	; 0xb6 <checkeq>
+ 1dc:	fd cf       	rjmp	.-6      	; 0x1d8 <main+0xa>
+
+000001de <__vector_21>:
+	DIDR0=0x3F;
+	startADC();
+}
+//Interrupt for ADC Completion
+ISR(ADC_vect)
+{
+ 1de:	1f 92       	push	r1
+ 1e0:	0f 92       	push	r0
+ 1e2:	0f b6       	in	r0, 0x3f	; 63
+ 1e4:	0f 92       	push	r0
+ 1e6:	11 24       	eor	r1, r1
+ 1e8:	2f 93       	push	r18
+ 1ea:	3f 93       	push	r19
+ 1ec:	4f 93       	push	r20
+ 1ee:	5f 93       	push	r21
+ 1f0:	6f 93       	push	r22
+ 1f2:	7f 93       	push	r23
+ 1f4:	8f 93       	push	r24
+ 1f6:	9f 93       	push	r25
+ 1f8:	af 93       	push	r26
+ 1fa:	bf 93       	push	r27
+ 1fc:	ef 93       	push	r30
+ 1fe:	ff 93       	push	r31
+	//Current ADC Port
+	uint8_t curr_ADC=ADMUX & 0x0F;
+ 200:	80 91 7c 00 	lds	r24, 0x007C	; 0x80007c <__TEXT_REGION_LENGTH__+0x7f807c>
+ 204:	8f 70       	andi	r24, 0x0F	; 15
+	
+	switch(curr_ADC)
+ 206:	48 2f       	mov	r20, r24
+ 208:	50 e0       	ldi	r21, 0x00	; 0
+ 20a:	48 30       	cpi	r20, 0x08	; 8
+ 20c:	51 05       	cpc	r21, r1
+ 20e:	68 f5       	brcc	.+90     	; 0x26a <__vector_21+0x8c>
+ 210:	fa 01       	movw	r30, r20
+ 212:	ec 5c       	subi	r30, 0xCC	; 204
+ 214:	ff 4f       	sbci	r31, 0xFF	; 255
+ 216:	0c 94 51 01 	jmp	0x2a2	; 0x2a2 <__tablejump2__>
+	{
+		case 0x00:
+		{
+			CdutyCycle[0]=ADCH;
+ 21a:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 21e:	90 93 0a 01 	sts	0x010A, r25	; 0x80010a <CdutyCycle>
+			break;
+ 222:	29 c0       	rjmp	.+82     	; 0x276 <__vector_21+0x98>
+		}
+		case 0x01:
+		{
+			CdutyCycle[1]=ADCH;
+ 224:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 228:	90 93 0b 01 	sts	0x010B, r25	; 0x80010b <CdutyCycle+0x1>
+			break;
+ 22c:	24 c0       	rjmp	.+72     	; 0x276 <__vector_21+0x98>
+		}
+		case 0x02:
+		{
+			CdutyCycle[2]=ADCH;
+ 22e:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 232:	90 93 0c 01 	sts	0x010C, r25	; 0x80010c <CdutyCycle+0x2>
+			break;
+ 236:	1f c0       	rjmp	.+62     	; 0x276 <__vector_21+0x98>
+		}
+		case 0x03:
+		{
+			CdutyCycle[3]=ADCH;
+ 238:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 23c:	90 93 0d 01 	sts	0x010D, r25	; 0x80010d <CdutyCycle+0x3>
+			break;
+ 240:	1a c0       	rjmp	.+52     	; 0x276 <__vector_21+0x98>
+		}
+		case 0x04:
+		{
+			CdutyCycle[4]=ADCH;
+ 242:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 246:	90 93 0e 01 	sts	0x010E, r25	; 0x80010e <CdutyCycle+0x4>
+			break;
+ 24a:	15 c0       	rjmp	.+42     	; 0x276 <__vector_21+0x98>
+		}
+		case 0x05:
+		{
+			CdutyCycle[5]=ADCH;
+ 24c:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 250:	90 93 0f 01 	sts	0x010F, r25	; 0x80010f <CdutyCycle+0x5>
+			break;
+ 254:	10 c0       	rjmp	.+32     	; 0x276 <__vector_21+0x98>
+		}
+		case 0x06:
+		{
+			CdutyCycle[6]=ADCH;
+ 256:	90 91 79 00 	lds	r25, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 25a:	90 93 10 01 	sts	0x0110, r25	; 0x800110 <CdutyCycle+0x6>
+			break;
+ 25e:	0b c0       	rjmp	.+22     	; 0x276 <__vector_21+0x98>
+		}
+		case 0x07:
+		{
+			CdutyCycle[7]=ADCH;
+ 260:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+ 264:	80 93 11 01 	sts	0x0111, r24	; 0x800111 <CdutyCycle+0x7>
+ 268:	02 c0       	rjmp	.+4      	; 0x26e <__vector_21+0x90>
+			break;
+		}
+		
+	}
+	if (curr_ADC ==(JYCT-1))
+ 26a:	87 30       	cpi	r24, 0x07	; 7
+ 26c:	21 f4       	brne	.+8      	; 0x276 <__vector_21+0x98>
+	{
+		selectADC(0x00);
+ 26e:	80 e0       	ldi	r24, 0x00	; 0
+ 270:	0e 94 cb 00 	call	0x196	; 0x196 <selectADC>
+ 274:	03 c0       	rjmp	.+6      	; 0x27c <__vector_21+0x9e>
+	}
+	
+	else
+	{
+		selectADC(curr_ADC+1);
+ 276:	8f 5f       	subi	r24, 0xFF	; 255
+ 278:	0e 94 cb 00 	call	0x196	; 0x196 <selectADC>
+	}
+	startADC();
+ 27c:	0e 94 d3 00 	call	0x1a6	; 0x1a6 <startADC>
+ 280:	ff 91       	pop	r31
+ 282:	ef 91       	pop	r30
+ 284:	bf 91       	pop	r27
+ 286:	af 91       	pop	r26
+ 288:	9f 91       	pop	r25
+ 28a:	8f 91       	pop	r24
+ 28c:	7f 91       	pop	r23
+ 28e:	6f 91       	pop	r22
+ 290:	5f 91       	pop	r21
+ 292:	4f 91       	pop	r20
+ 294:	3f 91       	pop	r19
+ 296:	2f 91       	pop	r18
+ 298:	0f 90       	pop	r0
+ 29a:	0f be       	out	0x3f, r0	; 63
+ 29c:	0f 90       	pop	r0
+ 29e:	1f 90       	pop	r1
+ 2a0:	18 95       	reti
+
+000002a2 <__tablejump2__>:
+ 2a2:	ee 0f       	add	r30, r30
+ 2a4:	ff 1f       	adc	r31, r31
+ 2a6:	05 90       	lpm	r0, Z+
+ 2a8:	f4 91       	lpm	r31, Z
+ 2aa:	e0 2d       	mov	r30, r0
+ 2ac:	09 94       	ijmp
+
+000002ae <_exit>:
+ 2ae:	f8 94       	cli
+
+000002b0 <__stop_program>:
+ 2b0:	ff cf       	rjmp	.-2      	; 0x2b0 <__stop_program>
